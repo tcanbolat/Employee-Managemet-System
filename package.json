@@ -1,0 +1,27 @@
+{
+  "name": "employee-managemet-system",
+  "version": "1.0.0",
+  "description": "contentmanagementapp",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tcanbolat/Employee-Managemet-System.git"
+  },
+  "author": "abdullah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tcanbolat/Employee-Managemet-System/issues"
+  },
+  "dependencies": {
+    "inquirer": "^6.3.1",
+    "mysql": "^2.17.1",
+    "console.table": "^0.10.0"
+  },
+  "homepage": "https://github.com/tcanbolat/Employee-Managemet-System#readme"
+}
