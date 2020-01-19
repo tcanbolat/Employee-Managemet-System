@@ -1,4 +1,7 @@
-var mysql      = require('mysql');
+var mysql = require('mysql');
+const inquirer = require("inquirer");
+
+
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
@@ -6,22 +9,27 @@ var connection = mysql.createConnection({
   database : "ems_db"
 });
  
-connection.connect();
  
-connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
-  if (error) throw error;
-  console.log('The solution is: ', results[0].solution);
-});
- 
-connection.end();
+const showEmp = () => {
+  connection.connect();
+  connection.query("SELECT employee.first_name, employee.last_name, role.title, role.salary FROM employee JOIN role ON (employee.role_id = role.id) ORDER BY salary ASC;", function (error, results, fields) {
+    if (error) throw error;
+    console.table(results);
+  });
+  connection.end();
+}
 
-console.table([
+
+inquirer
+  .prompt([
     {
-      name: 'foo',
-      age: 10
-    }, {
-      name: 'bar',
-      age: 20
+      type: "list",
+      name: "choices",
+      message: "What would you like to do?",
+      choices: ["Show all employees", "Quit"]
+    }  ])
+  .then(answers => {
+    if(answers.choices == "Show all employees") {
+      showEmp();
     }
-  ]);
-  
+  });
