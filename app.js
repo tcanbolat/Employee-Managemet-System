@@ -1,35 +1,31 @@
-var mysql = require('mysql');
 const inquirer = require("inquirer");
+const cTable = require('console.table');
+const questions = require("./lib/questions.js");
+const databasefunctions = require("./lib/databasefunctions.js");
 
 
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : '1990',
-  database : "ems_db"
-});
- 
- 
-const showEmp = () => {
-  connection.connect();
-  connection.query("SELECT employee.first_name, employee.last_name, role.title, role.salary FROM employee JOIN role ON (employee.role_id = role.id) ORDER BY salary ASC;", function (error, results, fields) {
-    if (error) throw error;
-    console.table(results);
-  });
-  connection.end();
-}
-
-
-inquirer
-  .prompt([
-    {
-      type: "list",
-      name: "choices",
-      message: "What would you like to do?",
-      choices: ["Show all employees", "Quit"]
-    }  ])
+const startApp = () => {
+  inquirer
+  .prompt(questions.optionsList)
   .then(answers => {
     if(answers.choices == "Show all employees") {
-      showEmp();
+      databasefunctions.showAllEmployees();
     }
+    else if (answers.choices == "Show all departments") {
+      databasefunctions.showAllDepartments();
+    }
+    else if (answers.choices == "Show all roles") {
+      databasefunctions.showAllRoles();
+    }
+    else if (answers.choices == "Add employee") {
+      inquirer.prompt(questions.newEmployeeQuestions).then(answers => {
+        console.log(answers); // need to finish adding id and manager id
+        databasefunctions.addEmployee(answers);
+      })
+    }
+    //else if()
   });
+}
+
+startApp();
+

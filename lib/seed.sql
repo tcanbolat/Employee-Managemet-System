@@ -29,7 +29,7 @@ CREATE TABLE `department` (
 
 ALTER TABLE `employee` ADD CONSTRAINT `employee_fk0` FOREIGN KEY (`role_id`) REFERENCES `role`(`id`);
 
-ALTER TABLE `employee` ADD CONSTRAINT `employee_fk1` FOREIGN KEY (`manager_id`) REFERENCES `employee`(`id`);
+ALTER TABLE `employee` ADD CONSTRAINT `employee_fk1` FOREIGN KEY (`manager_id`) REFERENCES `role`(`id`);
 
 ALTER TABLE `role` ADD CONSTRAINT `role_fk0` FOREIGN KEY (`department_id`) REFERENCES `department`(`id`);
 
@@ -41,9 +41,9 @@ VALUES ("sales"),
 	   ("engineering");
 
 INSERT INTO role (title, salary, department_id)
-VALUES ("sales director", 83000, sales.id),
-	   ("sales manager", 52000, sales.id),
-	   ("sales rep", 34000, sales.id),
+VALUES ("sales director", 83000, 1),
+	   ("sales manager", 52000, 1),
+	   ("sales rep", 34000, 1),
 	   ("finance director", 87000, 2),
 	   ("finance manager", 63000, 2),
 	   ("HR Director", 78000, 3),
