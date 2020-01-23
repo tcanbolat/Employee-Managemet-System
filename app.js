@@ -26,12 +26,16 @@ const startApp = () => {
         break;
 
       case "Add department":
-        // databasefunctions.  need to write code 
+        databasefunctions.addDepartment();
         break;
 
       case "Add role":
         databasefunctions.addRole();
-        break;    
+        break;   
+
+      case "Update employee role":
+        databasefunctions.updateRole();
+        break;
         
       case "Quit":
         process.exit();
@@ -41,29 +45,6 @@ const startApp = () => {
 }
 
 startApp();
-
-
-
-
-
-
-// if(answers.choices == "Show all employees") {
-//   databasefunctions.showAllEmployees();
-//   startApp();
-// }
-// else if (answers.choices == "Show all departments") {
-//   databasefunctions.showAllDepartments();
-// }
-// else if (answers.choices == "Show all roles") {
-//   databasefunctions.showAllRoles();
-// }
-// else if (answers.choices == "Add employee") {
-//   inquirer.prompt(questions.newEmployeeQuestions).then(answers => {
-//     console.log(answers); // need to finish adding id and manager id
-//     databasefunctions.addEmployee(answers);
-//   })
-// }
-//else if()
 
 
 
