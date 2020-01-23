@@ -3,29 +3,73 @@ const cTable = require('console.table');
 const questions = require("./lib/questions.js");
 const databasefunctions = require("./lib/databasefunctions.js");
 
-
 const startApp = () => {
   inquirer
   .prompt(questions.optionsList)
   .then(answers => {
-    if(answers.choices == "Show all employees") {
-      databasefunctions.showAllEmployees();
+    switch (answers.choices) {
+
+      case "Show all employees":
+          databasefunctions.showAllEmployees();
+          break;
+
+      case "Show all departments":
+        databasefunctions.showAllDepartments();
+        break;
+
+      case "Show all roles":
+        databasefunctions.showAllRoles();
+        break;
+
+      case "Add employee":
+        // inquirer.prompt(questions.newEmployeeQuestions).then(answers => {
+        //       console.log(answers); // need to finish adding id and manager id
+              databasefunctions.addEmployee();
+           // })
+        break;
+
+      case "Add department":
+        // databasefunctions.  need to write code 
+        break;
+
+      case "Add role":
+        // databasefunctions.  need to write code 
+        break;    
+        
+      case "Quit":
+        process.exit();
     }
-    else if (answers.choices == "Show all departments") {
-      databasefunctions.showAllDepartments();
-    }
-    else if (answers.choices == "Show all roles") {
-      databasefunctions.showAllRoles();
-    }
-    else if (answers.choices == "Add employee") {
-      inquirer.prompt(questions.newEmployeeQuestions).then(answers => {
-        console.log(answers); // need to finish adding id and manager id
-        databasefunctions.addEmployee(answers);
-      })
-    }
-    //else if()
+
   });
 }
 
 startApp();
+
+
+
+
+
+
+// if(answers.choices == "Show all employees") {
+//   databasefunctions.showAllEmployees();
+//   startApp();
+// }
+// else if (answers.choices == "Show all departments") {
+//   databasefunctions.showAllDepartments();
+// }
+// else if (answers.choices == "Show all roles") {
+//   databasefunctions.showAllRoles();
+// }
+// else if (answers.choices == "Add employee") {
+//   inquirer.prompt(questions.newEmployeeQuestions).then(answers => {
+//     console.log(answers); // need to finish adding id and manager id
+//     databasefunctions.addEmployee(answers);
+//   })
+// }
+//else if()
+
+
+
+
+
 

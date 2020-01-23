@@ -34,34 +34,32 @@ ALTER TABLE `employee` ADD CONSTRAINT `employee_fk1` FOREIGN KEY (`manager_id`) 
 ALTER TABLE `role` ADD CONSTRAINT `role_fk0` FOREIGN KEY (`department_id`) REFERENCES `department`(`id`);
 
 
-INSERT INTO department (name)
-VALUES ("sales"),
-	   ("finance"),
+INSERT INTO department (department)
+VALUES ("Sales"),
+	   ("Finance"),
 	   ("HR"),
-	   ("engineering");
+	   ("Engineering");
 
 INSERT INTO role (title, salary, department_id)
-VALUES ("sales director", 83000, sales.id),
-	   ("sales manager", 52000, sales.id),
-	   ("sales rep", 34000, sales.id),
-	   ("finance director", 87000, 2),
-	   ("finance manager", 63000, 2),
-	   ("HR Director", 78000, 3),
-	   ("HR manager", 50000, 3),
-	   ("HR rep", 32500, 3),
-	   ("engineering director", 86000, 4),
-	   ("engineering manager", 60000, 4),
-	   ("engineer", 55000, 4);
+VALUES ("Manager, Sales", 63000, 1),
+	   ("Sales Rep", 34000, 1),
+	   ("Manager, Finance", 68000, 2),
+	   ("Accountant", 60000, 2),
+	   ("manager HR", 50000, 3),
+	   ("HR Rep", 32500, 3),
+	   ("Manager, Engineering", 97000, 4),
+	   ("Engineer", 68000, 4);
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES ("John", "Smith", 1, NULL),
 	   ("Steve", "Roland", 2, 1),
-	   ("Julie", "Summers", 3, 2),
-	   ("Ahmed", "Yusuf", 4, NULL),
-	   ("Sarah", "Johansen", 5, 4),
-	   ("Harold", "Little", 6, NULL),
-	   ("Trevor", "Dune", 7, 6),
-	   ("Eugene", "Green", 8, 7),
-	   ("Hasan", "Demir", 9, NULL),
-	   ("Haile", "Hall", 10, 9),
-	   ("Samir", "Rakesh", 11, 10);
+	   ("Ahmed", "Yusuf", 3, NULL),
+	   ("Sarah", "Johansen", 4, 3),
+	   ("Harold", "Little", 5, NULL),
+	   ("Trevor", "Dune", 6, 5),
+	   ("Hasan", "Demir", 7, NULL),
+       ("Eugene", "Green", 8, 7),
+	   ("Haile", "Hall", 4, 3),
+	   ("Samir", "Rakesh", 2, 1);
+
+	   
