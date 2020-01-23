@@ -55,11 +55,19 @@ VALUES ("John", "Smith", 1, NULL),
 	   ("Steve", "Roland", 2, 1),
 	   ("Ahmed", "Yusuf", 3, NULL),
 	   ("Sarah", "Johansen", 4, 3),
+	   ("Ashley", "Bolt", 2, 1),
 	   ("Harold", "Little", 5, NULL),
+	   ("Kate", "Hall", 8, 7),
+	   ("Tony", "Rodriguez", 4, 3),
+	   ("Brent", "Osborn", 4, 3),
 	   ("Trevor", "Dune", 6, 5),
+	   ("Sam", "Good", 6, 5),
+	   ("Julie", "Dune", 6, 5),
 	   ("Hasan", "Demir", 7, NULL),
        ("Eugene", "Green", 8, 7),
 	   ("Haile", "Hall", 4, 3),
-	   ("Samir", "Rakesh", 2, 1);
+	   ("Samir", "Rakesh", 2, 1),
+	   ("Rebecca", "June", 8, 7);
+
 
 	   

@@ -1,5 +1,4 @@
 const inquirer = require("inquirer");
-const cTable = require('console.table');
 const questions = require("./lib/questions.js");
 const databasefunctions = require("./lib/databasefunctions.js");
 
