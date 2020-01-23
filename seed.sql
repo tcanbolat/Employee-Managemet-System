@@ -45,7 +45,7 @@ VALUES ("Manager, Sales", 63000, 1),
 	   ("Sales Rep", 34000, 1),
 	   ("Manager, Finance", 68000, 2),
 	   ("Accountant", 60000, 2),
-	   ("manager HR", 50000, 3),
+	   ("Manager, HR", 50000, 3),
 	   ("HR Rep", 32500, 3),
 	   ("Manager, Engineering", 97000, 4),
 	   ("Engineer", 68000, 4);

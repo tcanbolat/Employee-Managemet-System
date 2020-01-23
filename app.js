@@ -22,10 +22,7 @@ const startApp = () => {
         break;
 
       case "Add employee":
-        // inquirer.prompt(questions.newEmployeeQuestions).then(answers => {
-        //       console.log(answers); // need to finish adding id and manager id
-              databasefunctions.addEmployee();
-           // })
+          databasefunctions.addEmployee();      
         break;
 
       case "Add department":
@@ -33,7 +30,7 @@ const startApp = () => {
         break;
 
       case "Add role":
-        // databasefunctions.  need to write code 
+        databasefunctions.addRole();
         break;    
         
       case "Quit":
