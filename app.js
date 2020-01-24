@@ -2,7 +2,8 @@ const inquirer = require("inquirer");
 const questions = require("./lib/questions.js");
 const databasefunctions = require("./lib/databasefunctions.js");
 
-const startApp = () => {
+
+startApp = () => {
   inquirer
   .prompt(questions.optionsList)
   .then(answers => {
@@ -45,8 +46,9 @@ const startApp = () => {
 
 startApp();
 
-
-
+module.exports = {
+  startApp
+}
 
 
 
