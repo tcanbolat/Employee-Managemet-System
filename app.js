@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const questions = require("./lib/questions.js");
 const databasefunctions = require("./lib/databasefunctions.js");
+const figlet = require("figlet");
 
 
 startApp = () => {
@@ -44,7 +45,16 @@ startApp = () => {
   });
 }
 
-startApp();
+figlet('Employee \n Management \n System', function(err, data) {
+  if (err) {
+      console.log('Something went wrong...');
+      console.dir(err);
+      return;
+  }
+  console.log(data + "\n")
+  startApp();
+});
+
 
 module.exports = {
   startApp
