@@ -10,8 +10,8 @@ startApp = () => {
     switch (answers.choices) {
 
       case "Show all employees":
-          databasefunctions.showAllEmployees();
-          break;
+        databasefunctions.showAllEmployees();
+        break;
 
       case "Show all departments":
         databasefunctions.showAllDepartments();
@@ -22,7 +22,7 @@ startApp = () => {
         break;
 
       case "Add employee":
-          databasefunctions.addEmployee();      
+        databasefunctions.addEmployee();      
         break;
 
       case "Add department":
