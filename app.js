@@ -39,7 +39,7 @@ startApp = () => {
         break;
         
       case "Quit":
-        process.exit();
+        databasefunctions.quit();
     }
 
   });
@@ -54,7 +54,6 @@ figlet('Employee \n Management \n System', function(err, data) {
   console.log(data + "\n")
   startApp();
 });
-
 
 module.exports = {
   startApp
